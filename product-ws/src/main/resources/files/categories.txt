@@ -1,0 +1,14 @@
+Phone-001
+Computer-002
+Home Electronics-003
+Computer Components-004
+Phone-101-001
+Tablet-201-001
+Wearable-301-001
+Notebook-102-002
+Desktop-202-002
+Gaming PC-302-002
+TV-103-003
+Sound System-203-003
+Storage-104-004
+Graphic Card-204-004

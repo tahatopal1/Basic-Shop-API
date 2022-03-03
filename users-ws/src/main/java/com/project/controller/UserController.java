@@ -40,7 +40,7 @@ public class UserController {
     }
 
     @PutMapping
-    public UserDTO updateUser(@RequestParam(required = false) String email, @Valid @RequestBody UserDTO userDTO){
+    public UserDTO updateUser(@RequestParam String email, @Valid @RequestBody UserDTO userDTO){
         userService.updateUser(email, userDTO);
         return userDTO;
     }
