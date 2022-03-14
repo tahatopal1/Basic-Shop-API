@@ -2,8 +2,7 @@
 <h2>Basic Shop API For Practising Spring Cloud &amp; Microservices Dynamics</h2>
 
 <h3>Disciplines</h3>
-Multiple Microservices with Separated Databases
-
+Multiple Microservices with Separated Databases <br>
 
 Discovery Service
 
