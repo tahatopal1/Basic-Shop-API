@@ -1,6 +1,7 @@
 package com.example.productws.util;
 
 import org.springframework.stereotype.Component;
+import org.springframework.util.ResourceUtils;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -11,7 +12,7 @@ public class FileUtil {
 
     public StringBuffer readFile(String path) {
         try {
-            File file = new File(path);
+            File file = ResourceUtils.getFile(path);
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
             StringBuffer sb = new StringBuffer();

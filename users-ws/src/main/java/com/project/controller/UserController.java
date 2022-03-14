@@ -8,12 +8,15 @@ import com.project.dto.UserDTO;
 import com.project.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -23,9 +26,20 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private Environment env;
+
+    @GetMapping("/status/check")
+    public String status(){
+        return "Working on port " + env.getProperty("local.server.port")
+                + " with config environment = " + env.getProperty("token.check")
+                + "\n" + "Test value: " + env.getProperty("token.test")
+                + "\n" + "Ciphered value: " + env.getProperty("token.ciphered");
+    }
+
     @GetMapping("/user")
-    public UserDTO getUser(@RequestParam String email){
-        return userService.getUser(email);
+    public UserDTO getUser(@RequestParam String email, HttpServletRequest request) throws IOException {
+        return userService.getUser(email, request);
     }
 
     @GetMapping
@@ -34,7 +48,7 @@ public class UserController {
     }
 
     @PostMapping
-    public UserDTO createUser( @Valid @RequestBody UserDTO userDTO){
+    public UserDTO createUser(@Valid @RequestBody UserDTO userDTO){
         userService.createUser(userDTO);
         return userDTO;
     }

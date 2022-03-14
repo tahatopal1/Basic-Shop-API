@@ -9,14 +9,16 @@ public interface ProductService {
 
     List<ProductDTO> getAllProducts();
 
-    ProductDTO getProduct(String email);
+    ProductDTO getProduct(String code);
 
     void createProduct(ProductDTO productDTO);
 
-    void updateProduct(String email, ProductDTO productDTO);
+    void updateProduct(String code, ProductDTO productDTO);
 
-    void deleteProduct(String email);
+    void deleteProduct(String code);
 
     void batchProcess() throws JsonProcessingException;
+
+    boolean decreaseStock(String code, int count);
 
 }

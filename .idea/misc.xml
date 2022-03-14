@@ -7,8 +7,10 @@
         <option value="$PROJECT_DIR$/product-ws/pom.xml" />
         <option value="$PROJECT_DIR$/discovery-service/pom.xml" />
         <option value="$PROJECT_DIR$/api-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/orders-ws/pom.xml" />
+        <option value="$PROJECT_DIR$/config-service/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="openjdk-17" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="openjdk-17" project-jdk-type="JavaSDK" />
 </project>

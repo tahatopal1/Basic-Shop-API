@@ -9,13 +9,17 @@
         <outputRelativeToContentRoot value="true" />
         <module name="api-gateway" />
         <module name="users-ws" />
+        <module name="orders-ws" />
+        <module name="config-service" />
         <module name="product-ws" />
         <module name="discovery-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="api-gateway" target="11" />
+      <module name="config-service" target="11" />
       <module name="discovery-service" target="11" />
+      <module name="orders-ws" target="11" />
       <module name="product-ws" target="11" />
       <module name="users-ws" target="11" />
     </bytecodeTargetLevel>
@@ -23,7 +27,9 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-gateway" options="-parameters" />
+      <module name="config-service" options="-parameters" />
       <module name="discovery-service" options="-parameters" />
+      <module name="orders-ws" options="-parameters" />
       <module name="product-ws" options="-parameters" />
       <module name="users-ws" options="-parameters" />
     </option>

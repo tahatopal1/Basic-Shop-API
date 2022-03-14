@@ -2,8 +2,10 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/api-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/config-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/discovery-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/discovery-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/orders-ws/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/product-ws/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/users-ws/src/main/java" charset="UTF-8" />
   </component>

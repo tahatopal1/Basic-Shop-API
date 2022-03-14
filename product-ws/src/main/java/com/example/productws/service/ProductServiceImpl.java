@@ -13,10 +13,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl implements ProductService{
@@ -38,7 +40,10 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public List<ProductDTO> getAllProducts() {
-        return null;
+        return productRepository.findAll()
+                .stream()
+                .map(productMapper::straightMapping)
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -51,13 +56,15 @@ public class ProductServiceImpl implements ProductService{
     public void createProduct(ProductDTO productDTO) {
         Product product = productMapper.reverseMapping(productDTO);
         product.setId(UUID.randomUUID().toString());
-        productRepository.save(product);
+        product.getCategory().getProduct().add(product);
+        categoryRepository.save(product.getCategory());
     }
 
     @Override
     public void updateProduct(String code, ProductDTO productDTO) {
         Product product = Optional.ofNullable(productRepository.findByCode(code)).orElseThrow(() -> new RuntimeException("Product is not found"));
         mergeDTOInfo(productDTO, product);
+        productRepository.save(product);
     }
 
     private void mergeDTOInfo(ProductDTO productDTO, Product product) {
@@ -83,11 +90,26 @@ public class ProductServiceImpl implements ProductService{
         StringBuffer stringBuffer = fileUtil.readFile(url);
         Arrays.stream(stringBuffer.toString().split("\n")).forEach(line -> {
             String[] info = line.split("-");
-            this.createProduct(new ProductDTO(info[0],
-                                info[1], 
-                                Integer.parseInt(info[2]),
-                                Double.parseDouble(info[3]),
-                                new CategoryDTO("", info[4], null)));
+            try {
+                this.createProduct(new ProductDTO(info[0],
+                                    info[1],
+                                    Integer.parseInt(info[2]),
+                                    Double.parseDouble(info[3]),
+                                    new CategoryDTO("", info[4], null)));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         });
+    }
+
+    @Override
+    public boolean decreaseStock(String code, int count) {
+        Product product = productRepository.findByCode(code);
+        if (product.getStock() > count){
+            product.setStock(product.getStock() - count);
+            productRepository.save(product);
+            return true;
+        }else
+            return false;
     }
 }

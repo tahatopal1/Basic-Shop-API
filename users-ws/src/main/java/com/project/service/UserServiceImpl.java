@@ -3,10 +3,15 @@ package com.project.service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.project.client.ProductClient;
+import com.project.dto.ExtendedUserDTO;
+import com.project.dto.ProductDTO;
 import com.project.dto.RandomUserDTO;
 import com.project.dto.UserDTO;
 import com.project.model.User;
 import com.project.repository.UserRepository;
+import feign.Response;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.core.env.Environment;
@@ -18,6 +23,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -42,6 +49,9 @@ public class UserServiceImpl implements UserService{
     @Autowired
     private Environment environment;
 
+    @Autowired
+    private IntegrationService integrationService;
+
     @Override
     public List<UserDTO> getAllUsers() {
         return userRepository.findAll().stream().map(user
@@ -52,11 +62,12 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public UserDTO getUser(String email) {
+    public ExtendedUserDTO getUser(String email, HttpServletRequest request) throws IOException {
         User user = Optional.ofNullable(userRepository.findByEmail(email)).orElseThrow(() -> new RuntimeException("User is not found"));
-        return objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+        ExtendedUserDTO extendedUserDTO = objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
                 .setDateFormat(new SimpleDateFormat("dd-MM-yyyy"))
-                .convertValue(user, UserDTO.class);
+                .convertValue(user, ExtendedUserDTO.class);
+        return populateExtendedUserDTO(extendedUserDTO, request);
     }
 
     @Override
@@ -155,6 +166,14 @@ public class UserServiceImpl implements UserService{
                 || str.startsWith("Miss")
                 || str.startsWith("Ms")
                 || str.startsWith("Prof");
+    }
+
+    private ExtendedUserDTO populateExtendedUserDTO(ExtendedUserDTO extendedUserDTO, HttpServletRequest request) throws IOException {
+        Response response = integrationService.getRandomSuggestions(Map.of("Authorization", request.getHeader("Authorization")));
+        ProductDTO[] productDTOS = objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+                .readValue(IOUtils.toString(response.body().asReader()), ProductDTO[].class);
+        Arrays.stream(productDTOS).forEach(extendedUserDTO.getSuggested()::add);
+        return extendedUserDTO;
     }
 
     @Override
