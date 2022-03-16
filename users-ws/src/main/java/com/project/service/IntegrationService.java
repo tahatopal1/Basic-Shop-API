@@ -5,5 +5,5 @@ import feign.Response;
 import java.util.Map;
 
 public interface IntegrationService {
-    Response getRandomSuggestions(Map<String, String> headerMap);
+    Response getRandomSuggestions(Map<String, String> headerMap) throws Exception;
 }

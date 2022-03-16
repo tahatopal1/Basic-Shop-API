@@ -3,12 +3,12 @@ package com.project.client;
 import feign.Request;
 import feign.Response;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.retry.annotation.Retry;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 
 import java.nio.charset.StandardCharsets;
-import java.util.Collection;
 import java.util.Map;
 
 @FeignClient("products-ws")
@@ -16,6 +16,7 @@ public interface ProductClient {
 
     @GetMapping("/v1/products/suggestion")
     @CircuitBreaker(name = "products-ws", fallbackMethod = "getProductsFallback")
+    @Retry(name = "products-ws")
     Response getRandomSuggestions(@RequestHeader Map<String, String> headerMap);
 
     default Response getProductsFallback(Map<String, String> headerMap, Throwable exception){

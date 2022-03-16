@@ -62,7 +62,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public ExtendedUserDTO getUser(String email, HttpServletRequest request) throws IOException {
+    public ExtendedUserDTO getUser(String email, HttpServletRequest request) throws Exception {
         User user = Optional.ofNullable(userRepository.findByEmail(email)).orElseThrow(() -> new RuntimeException("User is not found"));
         ExtendedUserDTO extendedUserDTO = objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
                 .setDateFormat(new SimpleDateFormat("dd-MM-yyyy"))
@@ -168,7 +168,7 @@ public class UserServiceImpl implements UserService{
                 || str.startsWith("Prof");
     }
 
-    private ExtendedUserDTO populateExtendedUserDTO(ExtendedUserDTO extendedUserDTO, HttpServletRequest request) throws IOException {
+    private ExtendedUserDTO populateExtendedUserDTO(ExtendedUserDTO extendedUserDTO, HttpServletRequest request) throws Exception {
         Response response = integrationService.getRandomSuggestions(Map.of("Authorization", request.getHeader("Authorization")));
         ProductDTO[] productDTOS = objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
                 .readValue(IOUtils.toString(response.body().asReader()), ProductDTO[].class);

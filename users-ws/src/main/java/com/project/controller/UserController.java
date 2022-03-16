@@ -38,7 +38,7 @@ public class UserController {
     }
 
     @GetMapping("/user")
-    public UserDTO getUser(@RequestParam String email, HttpServletRequest request) throws IOException {
+    public UserDTO getUser(@RequestParam String email, HttpServletRequest request) throws Exception {
         return userService.getUser(email, request);
     }
 

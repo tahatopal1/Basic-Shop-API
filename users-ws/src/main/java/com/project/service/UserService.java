@@ -12,7 +12,7 @@ public interface UserService extends UserDetailsService {
 
     List<UserDTO> getAllUsers();
 
-    UserDTO getUser(String email, HttpServletRequest request) throws IOException;
+    UserDTO getUser(String email, HttpServletRequest request) throws Exception;
 
     void createUser(UserDTO userDTO);
 

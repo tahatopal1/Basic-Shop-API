@@ -14,7 +14,7 @@ public class IntegrationServiceImpl implements IntegrationService {
     private ProductClient productClient;
 
     @Override
-    public Response getRandomSuggestions(Map<String, String> headerMap) {
+    public Response getRandomSuggestions(Map<String, String> headerMap) throws Exception{
         return productClient.getRandomSuggestions(headerMap);
     }
 }

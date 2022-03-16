@@ -1,0 +1,90 @@
+2022-03-16 22:40:55.876  INFO [orders-ws,,] 25908 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2022-03-16 22:40:56.545  INFO [orders-ws,,] 25908 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=orders-ws, profiles=[default], label=null, version=9bb5587c5bb2defdc82cd891e81f60711689431f, state=null
+2022-03-16 22:40:56.546  INFO [orders-ws,,] 25908 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/tahatopal1/Shopping-API-Config-Server/file:C:\Users\tahat\AppData\Local\Temp\config-repo-15653152823429776893\orders-ws.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/tahatopal1/Shopping-API-Config-Server/file:C:\Users\tahat\AppData\Local\Temp\config-repo-15653152823429776893\application.properties'}]
+2022-03-16 22:40:56.561  INFO [orders-ws,,] 25908 --- [restartedMain] com.project.OrdersWsApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-03-16 22:40:57.539  INFO [orders-ws,,] 25908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-16 22:40:57.626  INFO [orders-ws,,] 25908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76 ms. Found 2 JPA repository interfaces.
+2022-03-16 22:40:58.406  INFO [orders-ws,,] 25908 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2022-03-16 22:40:58.423  INFO [orders-ws,,] 25908 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2022-03-16 22:40:58.536  INFO [orders-ws,,] 25908 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ead953c3-af80-3285-86fe-70eaa611cfa3
+2022-03-16 22:40:58.862  INFO [orders-ws,,] 25908 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-16 22:40:58.879  INFO [orders-ws,,] 25908 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-16 22:40:58.887  INFO [orders-ws,,] 25908 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-16 22:40:58.895  INFO [orders-ws,,] 25908 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-16 22:40:58.942  INFO [orders-ws,,] 25908 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-16 22:40:59.518  INFO [orders-ws,,] 25908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-03-16 22:40:59.527  INFO [orders-ws,,] 25908 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-16 22:40:59.527  INFO [orders-ws,,] 25908 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-16 22:40:59.644  INFO [orders-ws,,] 25908 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-16 22:40:59.644  INFO [orders-ws,,] 25908 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3069 ms
+2022-03-16 22:41:00.304  INFO [orders-ws,,] 25908 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-16 22:41:00.353  INFO [orders-ws,,] 25908 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.5.Final
+2022-03-16 22:41:00.456  INFO [orders-ws,,] 25908 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-16 22:41:00.533  INFO [orders-ws,,] 25908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-16 22:41:00.654  INFO [orders-ws,,] 25908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-16 22:41:00.667  INFO [orders-ws,,] 25908 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-03-16 22:41:01.239  INFO [orders-ws,,] 25908 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-16 22:41:01.247  INFO [orders-ws,,] 25908 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-16 22:41:01.390  WARN [orders-ws,,] 25908 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-16 22:41:01.493  WARN [orders-ws,,] 25908 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2022-03-16 22:41:01.729  INFO [orders-ws,,] 25908 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'products-ws' URL not provided. Will try picking an instance via load-balancing.
+2022-03-16 22:41:02.159  INFO [orders-ws,,] 25908 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'users-ws' URL not provided. Will try picking an instance via load-balancing.
+2022-03-16 22:41:03.329  INFO [orders-ws,,] 25908 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-03-16 22:41:03.809  WARN [orders-ws,,] 25908 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-03-16 22:41:03.954  INFO [orders-ws,,] 25908 --- [restartedMain] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.springCloudBusInput' has 1 subscriber(s).
+2022-03-16 22:41:04.215  INFO [orders-ws,,] 25908 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel errorChannel
+2022-03-16 22:41:04.263  INFO [orders-ws,,] 25908 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBusInput
+2022-03-16 22:41:04.290  INFO [orders-ws,,] 25908 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel nullChannel
+2022-03-16 22:41:04.302  INFO [orders-ws,,] 25908 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler _org.springframework.integration.errorLogger
+2022-03-16 22:41:04.353  INFO [orders-ws,,] 25908 --- [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2022-03-16 22:41:04.353  INFO [orders-ws,,] 25908 --- [restartedMain] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 1 subscriber(s).
+2022-03-16 22:41:04.354  INFO [orders-ws,,] 25908 --- [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2022-03-16 22:41:04.360  INFO [orders-ws,,] 25908 --- [restartedMain] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: rabbit
+2022-03-16 22:41:04.411  INFO [orders-ws,,] 25908 --- [restartedMain] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: rabbit
+2022-03-16 22:41:04.411  INFO [orders-ws,,] 25908 --- [restartedMain] o.s.c.s.binder.DefaultBinderFactory      : Retrieving cached binder: rabbit
+2022-03-16 22:41:04.459  INFO [orders-ws,,] 25908 --- [restartedMain] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.IMxWr_qIR-ekzcONcGpTLQ, bound to: springCloudBus
+2022-03-16 22:41:04.461  INFO [orders-ws,,] 25908 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2022-03-16 22:41:04.485  INFO [orders-ws,,] 25908 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#94df94f:0/SimpleConnection@dff3f67 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 60212]
+2022-03-16 22:41:04.541  INFO [orders-ws,,] 25908 --- [restartedMain] o.s.c.stream.binder.BinderErrorChannel   : Channel 'springCloudBus.anonymous.IMxWr_qIR-ekzcONcGpTLQ.errors' has 1 subscriber(s).
+2022-03-16 22:41:04.542  INFO [orders-ws,,] 25908 --- [restartedMain] o.s.c.stream.binder.BinderErrorChannel   : Channel 'springCloudBus.anonymous.IMxWr_qIR-ekzcONcGpTLQ.errors' has 2 subscriber(s).
+2022-03-16 22:41:04.555  INFO [orders-ws,,] 25908 --- [restartedMain] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.IMxWr_qIR-ekzcONcGpTLQ'
+2022-03-16 22:41:04.571  INFO [orders-ws,,] 25908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 60217 (http) with context path ''
+2022-03-16 22:41:04.572  INFO [orders-ws,,] 25908 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 60217
+2022-03-16 22:41:04.575  INFO [orders-ws,,] 25908 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-03-16 22:41:04.602  INFO [orders-ws,,] 25908 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-03-16 22:41:04.605  INFO [orders-ws,,] 25908 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-03-16 22:41:04.621  INFO [orders-ws,,] 25908 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-03-16 22:41:04.621  INFO [orders-ws,,] 25908 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-03-16 22:41:04.621  INFO [orders-ws,,] 25908 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-03-16 22:41:04.621  INFO [orders-ws,,] 25908 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-03-16 22:41:04.621  INFO [orders-ws,,] 25908 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-03-16 22:41:04.621  INFO [orders-ws,,] 25908 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-03-16 22:41:04.621  INFO [orders-ws,,] 25908 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-03-16 22:41:04.744  INFO [orders-ws,,] 25908 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-03-16 22:41:04.746  INFO [orders-ws,,] 25908 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-03-16 22:41:04.748  INFO [orders-ws,,] 25908 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-03-16 22:41:04.751  INFO [orders-ws,,] 25908 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1647459664751 with initial instances count: 2
+2022-03-16 22:41:04.773  INFO [orders-ws,,] 25908 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ORDERS-WS with eureka with status UP
+2022-03-16 22:41:04.773  INFO [orders-ws,,] 25908 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1647459664773, current=UP, previous=STARTING]
+2022-03-16 22:41:04.774  INFO [orders-ws,,] 25908 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERS-WS/orders-ws:17b8740ad60f602deeb755f801f94777: registering service...
+2022-03-16 22:41:04.813  INFO [orders-ws,,] 25908 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERS-WS/orders-ws:17b8740ad60f602deeb755f801f94777 - registration status: 204
+2022-03-16 22:41:04.928  INFO [orders-ws,,] 25908 --- [restartedMain] com.project.OrdersWsApplication          : Started OrdersWsApplication in 10.106 seconds (JVM running for 11.275)
+2022-03-16 22:46:04.631  INFO [orders-ws,,] 25908 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-03-16 22:51:04.641  INFO [orders-ws,,] 25908 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-03-16 22:56:04.645  INFO [orders-ws,,] 25908 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-03-16 23:01:04.660  INFO [orders-ws,,] 25908 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-03-16 23:06:04.670  INFO [orders-ws,,] 25908 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-03-16 23:11:04.676  INFO [orders-ws,,] 25908 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-03-16 23:16:04.682  INFO [orders-ws,,] 25908 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-03-16 23:21:04.694  INFO [orders-ws,,] 25908 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-03-16 23:26:04.697  INFO [orders-ws,,] 25908 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-03-16 23:31:04.702  INFO [orders-ws,,] 25908 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-03-16 23:36:04.717  INFO [orders-ws,,] 25908 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-03-16 23:41:04.730  INFO [orders-ws,,] 25908 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-03-16 23:46:04.744  INFO [orders-ws,,] 25908 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-03-16 23:51:04.748  INFO [orders-ws,,] 25908 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-03-16 23:52:56.337  INFO [orders-ws,,] 25908 --- [Thread-6] o.s.c.s.a.z.ZipkinAutoConfiguration      : Flushing remaining spans on shutdown
+2022-03-16 23:52:56.403  INFO [orders-ws,,] 25908 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ORDERS-WS with eureka with status DOWN
+2022-03-16 23:52:56.404  INFO [orders-ws,,] 25908 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1647463976403, current=DOWN, previous=UP]
+2022-03-16 23:52:56.404  INFO [orders-ws,,] 25908 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERS-WS/orders-ws:17b8740ad60f602deeb755f801f94777: registering service...
+2022-03-16 23:52:56.461  INFO [orders-ws,,] 25908 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERS-WS/orders-ws:17b8740ad60f602deeb755f801f94777 - registration status: 204
