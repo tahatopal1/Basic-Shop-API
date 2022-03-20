@@ -11,6 +11,7 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -18,10 +19,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("/v1/users")
 public class UserController {
+
+    private Logger logger = Logger.getLogger(getClass().getName());
 
     @Autowired
     private UserService userService;
@@ -38,6 +42,7 @@ public class UserController {
     }
 
     @GetMapping("/user")
+    @PreAuthorize("#email == authentication.principal.username")
     public UserDTO getUser(@RequestParam String email, HttpServletRequest request) throws Exception {
         return userService.getUser(email, request);
     }
